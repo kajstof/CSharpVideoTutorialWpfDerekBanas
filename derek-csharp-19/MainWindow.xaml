@@ -11,16 +11,16 @@
         <sys:String x:Key="strHelloAgain">Hello Again</sys:String>
         <Style TargetType="Button">
             <Setter Property="Margin" Value="1"></Setter>
-            <Setter Property="FontSize" Value="40"></Setter>
+            <Setter Property="FontSize" Value="20"></Setter>
             <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
             <Setter Property="FontFamily" Value="Consolas"></Setter>
         </Style>
     </Window.Resources>
-    <StackPanel Orientation="Vertical">
-        <TextBlock HorizontalAlignment="Center" TextWrapping="NoWrap" Text="Hello World" VerticalAlignment="Top" FontSize="40"></TextBlock>
-        <TextBlock Text="{StaticResource strHelloAgain}" FontSize="40" HorizontalAlignment="Center"></TextBlock>
-        <Button x:Name="Button1" Height="60" Width="300" HorizontalAlignment="Center" Content="Close Window" Click="Close_Click"/>
-        <Button x:Name="BtnOpenFile" Height="60" Width="300" HorizontalAlignment="Center" Content="Open File" Click="BtnOpenFile_Click"/>
-        <Button x:Name="BtnSaveFile" Height="60" Width="300" HorizontalAlignment="Center" Content="Save File" Click="BtnSaveFile_Click"/>
-    </StackPanel>
+    <WrapPanel Orientation="Horizontal">
+        <Button Content="Button" />
+        <Button Content="Button" />
+        <Button Content="Button" />
+        <Button Content="Button" />
+        <Button Content="Button" />
+    </WrapPanel>
 </Window>
