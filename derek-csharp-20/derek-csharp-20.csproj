@@ -96,5 +96,17 @@
   <ItemGroup>
     <Resource Include="Resources\favicon.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Exit.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\New.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Open.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Save.bmp" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
