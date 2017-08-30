@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "derek-csharp-22", "derek-cs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "derek-csharp-23", "derek-csharp-23\derek-csharp-23.csproj", "{06B272A7-E098-460C-A885-4B88A924A598}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "derek-csharp-24", "derek-csharp-24\derek-csharp-24.csproj", "{C64457DE-BE55-4CFA-8562-F768EFA08DAE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{06B272A7-E098-460C-A885-4B88A924A598}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{06B272A7-E098-460C-A885-4B88A924A598}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{06B272A7-E098-460C-A885-4B88A924A598}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C64457DE-BE55-4CFA-8562-F768EFA08DAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C64457DE-BE55-4CFA-8562-F768EFA08DAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C64457DE-BE55-4CFA-8562-F768EFA08DAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C64457DE-BE55-4CFA-8562-F768EFA08DAE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
