@@ -1,0 +1,156 @@
+﻿<Window x:Class="derek_csharp_23.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:derek_csharp_23"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525" SizeToContent="WidthAndHeight" Topmost="False" WindowState="Normal" Icon="./Resources/favicon.ico">
+    <Grid>
+        <TabControl HorizontalAlignment="Left" Height="319" VerticalAlignment="Top" Width="517" Margin="-6,0,0,0">
+            <TabItem Header="Calendar">
+                <Grid Background="#FFE5E5E5">
+                    <Calendar Name="MyCalendar" Background="AliceBlue" DisplayMode="Month" DisplayDateStart="2017-03-01" DisplayDateEnd="2017-03-31" FirstDayOfWeek="Monday" IsTodayHighlighted="True" SelectedDatesChanged="MyCalendar_SelectedDatesChanged" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top">
+                        <Calendar.BlackoutDates>
+                            <CalendarDateRange Start="2017-03-01" End="2017-03-10"/>
+                        </Calendar.BlackoutDates>
+                        <Calendar.SelectedDates>
+                            <sys:DateTime>2017-03-25</sys:DateTime>
+                        </Calendar.SelectedDates>
+                    </Calendar>
+                    <TextBox Name="tbDateSelected" HorizontalAlignment="Left" Height="23" Margin="242,31,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Draw" KeyUp="TabItem_KeyUp">
+                <StackPanel Background="#FFE5E5E5">
+                    <ToolBar Name="drawingToolbar" Height="50">
+                        <RadioButton Background="#FFD2D2D2" Content="Draw" Height="50" Width="80" GroupName="DrawGroup" Click="RadioButton_Click"/>
+                        <RadioButton Background="#FFD2D2D2" Content="Erase" Height="50" Width="80" GroupName="DrawGroup" Click="RadioButton_Click"/>
+                        <RadioButton Background="#FFD2D2D2" Content="Select" Height="50" Width="80" GroupName="DrawGroup" Click="RadioButton_Click"/>
+                        <Button Background="#FFD2D2D2" Content="Save" Height="50" Width="80" Click="SaveButton_Click"/>
+                        <Button Background="#FFD2D2D2" Content="Open" Height="50" Width="80" Click="OpenButton_Click"/>
+                    </ToolBar>
+                    <InkCanvas Name="DrawingCanvas" Height="246">
+                        <InkCanvas.DefaultDrawingAttributes>
+                            <DrawingAttributes x:Name="strokeAttr" Width="3" Color="Black"/>
+                        </InkCanvas.DefaultDrawingAttributes>
+                    </InkCanvas>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Flow Reader" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="100">
+                <Grid Background="#FFE5E5E5">
+                    <FlowDocumentReader ViewingMode="Page" IsFindEnabled="True" IsPageViewEnabled="True" IsScrollViewEnabled="True" IsTwoPageViewEnabled="True">
+                        <FlowDocument>
+                            <Paragraph>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </Paragraph>
+                            <List>
+                                <ListItem>
+                                    <Paragraph>Item 1</Paragraph>
+                                </ListItem>
+                                <ListItem>
+                                    <Paragraph>Item 2</Paragraph>
+                                </ListItem>
+                                <ListItem>
+                                    <Paragraph>Item 3</Paragraph>
+                                </ListItem>
+                            </List>
+                            <BlockUIContainer>
+                                <StackPanel>
+                                    <Image Source="./Resources/Turtle.png" Height="64"/>
+                                    <Label Foreground="Blue">Favorite:</Label>
+                                    <ComboBox>
+                                        <ComboBoxItem IsSelected="True">Android</ComboBoxItem>
+                                        <ComboBoxItem IsSelected="True">Apple</ComboBoxItem>
+                                        <ComboBoxItem IsSelected="True">Windows Phone</ComboBoxItem>
+                                    </ComboBox>
+                                    <Label Foreground="red">Favorite color:</Label>
+                                    <StackPanel>
+                                        <RadioButton>Red</RadioButton>
+                                        <RadioButton>Blue</RadioButton>
+                                        <RadioButton>Green</RadioButton>
+                                    </StackPanel>
+                                    <Label>Your name:</Label>
+                                    <TextBox>Name</TextBox>
+                                </StackPanel>
+                            </BlockUIContainer>
+                            <Paragraph></Paragraph>
+                            <Table>
+                                <Table.Columns>
+                                    <TableColumn/>
+                                    <TableColumn/>
+                                    <TableColumn/>
+                                </Table.Columns>
+                                <TableRowGroup>
+                                    <TableRow>
+                                        <TableCell ColumnSpan="3" Background="Blue">
+                                            <Paragraph Padding="10" Foreground="White">Best Football Players</Paragraph>
+                                        </TableCell>
+                                    </TableRow>
+                                    <TableRow>
+                                        <TableCell Background="White">
+                                            <Paragraph>Name</Paragraph>
+                                        </TableCell>
+                                        <TableCell Background="White">
+                                            <Paragraph>Average</Paragraph>
+                                        </TableCell>
+                                        <TableCell Background="White">
+                                            <Paragraph>HRs</Paragraph>
+                                        </TableCell>
+                                    </TableRow>
+                                </TableRowGroup>
+                            </Table>
+                        </FlowDocument>
+                    </FlowDocumentReader>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Page Viewer" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top">
+                <StackPanel Background="#FFE5E5E5">
+                    <FlowDocumentPageViewer Name="FdPageViewer" Height="290">
+                        <FlowDocument>
+                            <Paragraph>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </Paragraph>
+                            <Paragraph>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </Paragraph>
+                        </FlowDocument>
+                    </FlowDocumentPageViewer>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Scroll" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top">
+                <Grid Background="#FFE5E5E5">
+                    <FlowDocumentScrollViewer>
+                        <FlowDocument>
+                            <Paragraph>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </Paragraph>
+                            <Paragraph>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </Paragraph>
+                        </FlowDocument>
+                    </FlowDocumentScrollViewer>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Generate" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top">
+                <Grid Background="#FFE5E5E5">
+                    <FlowDocumentScrollViewer Name="fdScrollViewer"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Rich" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top">
+                <StackPanel Background="#FFE5E5E5">
+                    <RichTextBox Name="RichTB" Height="200" SpellCheck.IsEnabled="True" ContextMenuOpening="RichTB_ContextMenuOpening">
+                        <FlowDocument>
+                            <Paragraph>
+                                You can edit me
+                            </Paragraph>
+                        </FlowDocument>
+                    </RichTextBox>
+                    <Button Click="SaveRTBContent">Save</Button>
+                    <Button Click="OpenRTBContent">Open</Button>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
